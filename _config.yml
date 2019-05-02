@@ -1,14 +1,14 @@
 # Setup
-title:        Project or Site name
-tagline:      A responsive theme for your project on GitHub Pages
+title:        성기현 블로그       
+tagline:      스쳐가는 생각을 잡은 곳
 baseurl:      ""
 paginate:     1
 locale:       "en"
 
 # About/contact
 author:
-  name:       Author name
-  url:        http://yourhomepage.com 
+  name:       Gihyeon Sung
+  url:        https://github.com/chu-tty
 
 # Gems
 gems:
