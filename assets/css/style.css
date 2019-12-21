@@ -29,3 +29,9 @@ figure.highlight {
     max-height: 20rem;
     overflow-y: auto;
 }
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 95%;
+    }
+}
