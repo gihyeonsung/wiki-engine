@@ -1,18 +1,28 @@
-# Setup
-title:        성기현 블로그       
-tagline:      아무거나 기록
-baseurl:      ""
-paginate:     1
-locale:       "en"
+name: "Jekyll true minimal theme"
+description: "Lightweight theme"
 
-# About/contact
-author:
-  name:       Gihyeon Sung
-  url:        https://github.com/chu-tty
+url: '' 
+baseurl: ''
 
-# Gems
-gems:
-  - jekyll-paginate
-
-#Others
 markdown: kramdown
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-paginate
+paginate: 10
+paginate_path: /page-:num
+
+#disqus-id: your-disqus-id
+
+source: .
+destination: ./_site
+
+sass:
+    style: :compressed
+    sass_dir: assets/css/
+
