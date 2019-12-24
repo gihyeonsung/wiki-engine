@@ -1,5 +1,7 @@
 html {
-    font-family: 'Iropke Batang', 'Courier New', Courier, monospace;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 a {
