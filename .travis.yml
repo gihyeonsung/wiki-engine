@@ -1,0 +1,17 @@
+language: ruby
+cache: bundler
+branches:
+  only:
+  - release
+script:
+  - bundle exec jekyll build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  target_branch: master
+  local_dir: ./_site
+  fqdn: hyeon.io
+  on:
+    branch: release
