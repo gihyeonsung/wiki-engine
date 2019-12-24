@@ -12,11 +12,6 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-plugins:
-  - jekyll-paginate
-paginate: 10
-paginate_path: /page-:num
-
 source: .
 destination: ./_site
 
