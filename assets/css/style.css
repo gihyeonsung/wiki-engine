@@ -8,18 +8,24 @@ a {
     text-decoration: none;
 }
 
-main {
-    width: 40%;
-    margin:0 auto;
-}
-
 p {
     width: 100%;
     word-wrap: break-word;
     hyphens: auto;
 }
 
-img {
+main {
+    width: 40%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        width: 95%;
+    }
+}
+
+article > p > img {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -27,15 +33,9 @@ img {
     width: auto;
 }
 
-figure.highlight {
+article > figure.highlight {
     max-height: 20rem;
     overflow-y: auto;
-}
-
-@media screen and (max-width: 1024px) {
-    main {
-        width: 95%;
-    }
 }
 
 article > table {
