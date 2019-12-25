@@ -41,6 +41,7 @@ article > figure.highlight {
 article > table {
     border-spacing: 0;
     border-collapse: collapse;
+    margin-bottom: 1rem;
 
     position: relative;
     left: 50%;
@@ -59,7 +60,7 @@ article > table tr:nth-child(even) {
 article > blockquote {
     border-left: 5px solid #dddddd;
     padding: 1rem;
-    margin: 1rem;
+    margin: 0rem 1rem 1rem 1rem;
     background: #f7f7f7;
 }
 
