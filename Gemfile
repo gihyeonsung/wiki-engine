@@ -1,12 +1,13 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
-# gem "rails"
-gem "jekyll"
+gem "jekyll", "~> 4.0.0"
 gem "therubyracer"
 group :jekyll_plugins do
-    gem 'jekyll-katex'
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-katex"
+end
+
+install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
+  gem "tzinfo", "~> 1.2"
+  gem "tzinfo-data"
 end
