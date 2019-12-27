@@ -33,9 +33,13 @@ article > p > img {
     width: auto;
 }
 
-article > figure.highlight {
+article > .highlight {
+    overflow-y: scroll;
     max-height: 20rem;
-    overflow-y: auto;
+}
+
+article code pre {
+    white-space: pre;
 }
 
 article > table {
