@@ -1,4 +1,4 @@
-html {
+body {
     font-family: 'Noto Sans KR', sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -6,6 +6,15 @@ html {
 
 a {
     text-decoration: none;
+    color: #5c73f2;
+}
+
+a:visited {
+    color: #5c73f2;
+}
+
+a:hover {
+    color: #0029fa;
 }
 
 p {
@@ -14,9 +23,22 @@ p {
     hyphens: auto;
 }
 
+header {
+    text-align: center;
+}
+
 main {
     width: 40%;
     margin: 0 auto;
+}
+
+.btn {
+    padding: 0.25rem 1rem;
+    background-color: #f7f7f7;
+}
+
+.btn:hover {
+    background-color: #ffffff;
 }
 
 @media screen and (max-width: 1024px) {
@@ -52,7 +74,8 @@ article > table {
     transform: translateX(-50%);
 }
 
-article > table th, article > table td {
+article > table th,
+article > table td {
     padding: 5px 18px;
     border-top: 1px solid #dddddd;
 }
