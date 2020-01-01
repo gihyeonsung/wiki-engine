@@ -13,6 +13,7 @@ media: /media
 plugins:
   - jekyll-feed
   - jekyll-katex
+  - jekyll-sitemap
 
 katex:
   rendering_options:
