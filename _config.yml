@@ -14,8 +14,17 @@ plugins:
   - jekyll-feed
   - jekyll-katex
   - jekyll-sitemap
+  - jekyll-toc
 
 katex:
   rendering_options:
     throw_error: true                       # throwOnError - set to false if you want rendering to output error as text rather than a build error
     error_color: "#cc0000"                  # errorColor
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      toc: true
