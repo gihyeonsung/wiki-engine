@@ -55,6 +55,11 @@ main {
     font-size: calc(2em/3);
 }
 
+.copyright {
+    text-align: center;
+    font-size: calc(2em/3);
+}
+
 @media screen and (max-width: 1024px) {
     main {
         width: 95%;
