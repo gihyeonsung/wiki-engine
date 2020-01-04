@@ -4,6 +4,16 @@ body {
     font-weight: 300;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 40%;
+    margin: 0 auto;
+}
+
 a {
     text-decoration: none;
     color: #5c73f2;
@@ -23,25 +33,41 @@ p {
     hyphens: auto;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-}
-
-main {
-    width: 40%;
-    margin: 0 auto;
-}
-
-.btn {
-    background-color: #f7f7f7;
-    text-align: center;
-    width: 8rem;
-    padding: 0.125rem 0;
+.header-item {
+    border-bottom: 0.2em solid #dddddd;
 }
 
 .btn:hover {
     background-color: #ffffff;
+}
+
+.btn {
+    background-color: #f7f7f7;
+    color: #000000 !important;
+    text-align: center;
+    width: 6rem;
+    padding: 0.125rem 0;
+}
+
+.search {
+    display: flex;
+}
+
+.search-input {
+    border: 0;
+    padding: 0 1em;
+}
+
+.search-input:focus {
+    background-color: #f7f7f7;
+}
+
+.search-btn {
+    border: 0;
+}
+
+form {
+    display: flex;
 }
 
 .note-title {
