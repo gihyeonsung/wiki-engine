@@ -1,6 +1,6 @@
-title: 성기현 블로그
+title: 성기현 노트
 description: >-
-  생각과 열정을 기록한 곳입니다.
+  아무거나 기록
 
 baseurl: ""
 url: "https://hyeon.io"
@@ -24,7 +24,12 @@ katex:
 defaults:
   -
     scope:
-      path: "_posts"
-      type: "posts"
+      path: "_notes"
     values:
+      layout: "note"
       toc: true
+
+collections:
+  notes:
+    output: true
+    permalink: /:collection/:slug
