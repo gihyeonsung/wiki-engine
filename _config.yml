@@ -27,6 +27,4 @@ defaults:
       path: "_posts"
       type: "posts"
     values:
-      layout: "post"
       toc: true
-      author: "성기현"
