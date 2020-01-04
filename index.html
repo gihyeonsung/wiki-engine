@@ -10,10 +10,11 @@ layout: default
 </section>
   
 <section>
-  <h2>최근 게시글</h2>
+  <h2>최근 노트들</h2>
 
+  {% assign notes = site.notes | sort: 'date' | reverse %}
   <ul>
-    {% for note in site.notes limit:10 %}
+    {% for note in notes limit:10 %}
     <li>
       {{ note.date | date: "%Y년 %m월 %d일" }}
       -

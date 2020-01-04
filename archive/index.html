@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-
 <h2>Archive</h2>
 
+{% assign notes = site.notes | sort: 'date' | reverse %}
 <ul>
-	{% for note in site.notes %}
+	{% for note in notes %}
 	<li>
 		{{ note.date | date: "%Y년 %m월 %d일" }}
 		-
