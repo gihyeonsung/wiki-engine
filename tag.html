@@ -1,0 +1,22 @@
+---
+layout: default
+permalink: "/tag"
+---
+<h2>태그</h2>
+
+{% assign tags =  site.notes | map: 'tags' | join: ','  | split: ',' | uniq %}
+{% for tag in tags %}
+<h3 id="{{ tag }}">{{ tag }}</h3>
+
+<ul>
+	{% for note in site.notes %}
+	{% if note.tags contains tag %}
+	<li>
+		{{ note.date | date: "%Y년 %m월 %d일" }}
+		-
+		<a href="{{ note.url }}">{{ note.title }}</a>
+	</li>
+	{% endif %}
+	{% endfor %}
+</ul>
+{% endfor %}
