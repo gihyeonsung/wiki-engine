@@ -55,6 +55,7 @@ p {
 
 .search-input {
     border: 0;
+    width: 6rem;
     padding: 0 1em;
 }
 
@@ -63,6 +64,7 @@ p {
 }
 
 .search-btn {
+    width: 3rem;
     border: 0;
 }
 
