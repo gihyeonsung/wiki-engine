@@ -27,6 +27,7 @@ defaults:
     values:
       layout: "note"
       toc: true
+      category: "root"
 
 collections:
   notes:
