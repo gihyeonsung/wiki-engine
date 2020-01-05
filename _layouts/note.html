@@ -5,6 +5,11 @@ layout: default
     <h1 class="note-title">{{ page.title }}</h1>
     <p class="note-metadata">작성 {{ page.date | date: "%Y년 %m월 %d일" }}</p>
     <p class="note-metadata">수정 {{ page.updated | default: page.date | date: "%Y년 %m월 %d일" }}</p>
+    <p class="note-metadata">
+        분류
+        <a href="/notes/{{ page.category }}">{{ page.category }}</a>
+    </p>
+
     {% if page.tags.size > 0 %}
     <p class="note-metadata">
         태그
