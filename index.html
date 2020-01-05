@@ -10,9 +10,9 @@ layout: default
 </section>
   
 <section>
-  <h2>최근 노트들</h2>
-
-  {% assign notes = site.notes | sort: 'date' | reverse %}
+  <h2>최근 노트</h2>
+  {% assign category_note_default = 'category,' | split: ',' %}
+  {% assign notes = site.notes | where_exp: 'note', 'note.tags != category_note_default' | sort: 'date' | reverse %}
   <ul>
     {% for note in notes limit:10 %}
     <li>
