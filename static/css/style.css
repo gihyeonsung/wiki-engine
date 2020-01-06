@@ -83,6 +83,13 @@ form {
     font-size: 0.75em;
 }
 
+.section-nav {
+    border: 1px solid #000000;
+    padding: 1em 1em 1em 2em;
+    width: max-content;
+    font-size: 0.75em;
+}
+
 @media screen and (max-width: 1024px) {
     main {
         width: 85%;
