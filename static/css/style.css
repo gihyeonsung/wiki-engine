@@ -1,99 +1,31 @@
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, ul, li, address {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
 body {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-style: normal;
-    font-weight: 300;
+  margin: 1rem 0 0 10rem;
+  max-width: 35rem;
 }
-
-header {
-    display: flex;
-    justify-content: center;
+@media screen and (max-width: 800px) {
+  body { margin: 1rem; }
 }
+.metadata { margin: 0; }
 
-main {
-    margin: 0 auto;
-    width: 40%;
+h1 { font-size: 1.5rem; }
+h2 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0 0;
 }
-
-a {
-    color: #5c73f2;
-    text-decoration: none;
-}
-
-a:visited {
-    color: #5c73f2;
-}
-
-a:hover {
-    color: #0029fa;
-}
-
 p {
-    hyphens: auto;
-    width: 100%;
-    word-wrap: break-word;
+  margin: 0 0 1rem 0;
+  width: 100%;
+  word-wrap: break-word;
 }
-
-.header-item {
-    border-bottom: 0.2em solid #dddddd;
-}
-
-.btn:hover {
-    background-color: #ffffff;
-}
-
-.btn {
-    background-color: #f7f7f7;
-    color: #000000 !important;
-    padding: 0.125rem 0;
-    text-align: center;
-    width: 6rem;
-}
-
-.search {
-    display: flex;
-}
-
-.search-input {
-    border: 0;
-    padding: 0 1em;
-    width: 6rem;
-}
-
-.search-input:focus {
-    background-color: #f7f7f7;
-}
-
-.search-btn {
-    border: 0;
-    width: 3rem;
-}
-
-form {
-    display: flex;
-}
-
-.note-title {
-    margin-bottom: 0;
-    text-align: center;
-}
-
-.note-metadata {
-    font-size: 0.75em;
-    margin: 0;
-    text-align: right;
-}
-
-.section-nav {
-    border: 1px solid #000000;
-    font-size: 0.75em;
-    padding: 1em 1em 1em 2em;
-    width: max-content;
-}
-
-@media screen and (max-width: 1024px) {
-    main {
-        width: 85%;
-    }
+li {
+  list-style: none;
+  margin: 0 0 1rem 0;
 }
 
 article > p > img {
@@ -103,18 +35,14 @@ article > p > img {
     transform: translateX(-50%);
     width: auto;
 }
-
+article li { margin: 0 0 0 2rem; }
 article > .highlight {
     max-height: 20rem;
     overflow-y: scroll;
 }
-
-article code pre {
-    white-space: pre;
-}
-
+article code pre { white-space: pre; }
+article > blockquote { margin: 0 0 0 2rem; }
 article > table {
-
     border-collapse: collapse;
     border-spacing: 0;
     left: 50%;
@@ -122,24 +50,8 @@ article > table {
     position: relative;
     transform: translateX(-50%);
 }
-
-article > table th,
-article > table td {
+article > table th, article > table td {
     border-top: 1px solid #dddddd;
     padding: 5px 18px;
 }
-
-article > table tr:nth-child(even) {
-    background: #f7f7f7;
-}
-
-article > blockquote {
-    background: #f7f7f7;
-    border-left: 5px solid #dddddd;
-    margin: 0rem 1rem 1rem 1rem;
-    padding: 1rem;
-}
-
-article > blockquote p {
-    margin: 0;
-}
+article > table tr:nth-child(even) { background: #f7f7f7; }

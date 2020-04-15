@@ -1,6 +1,6 @@
-title: 성기현의 노트
+title: 노트
 description: >-
-  성기현의 노트입니다.
+  개인적으로 공부하고 찾은 자료를 정리합니다.
 
 url: "https://hyeon.io"
 
@@ -11,12 +11,11 @@ media: /media
 
 plugins:
   - jekyll-katex
-  - jekyll-toc
 
 katex:
   rendering_options:
-    throw_error: true                       # throwOnError - set to false if you want rendering to output error as text rather than a build error
-    error_color: "#cc0000"                  # errorColor
+    throw_error: true
+    error_color: "#ff0000"
 
 defaults:
   -
@@ -24,8 +23,7 @@ defaults:
       path: "_notes"
     values:
       layout: "note"
-      toc: true
-      category: "root"
+      category: "index"
 
 collections:
   notes:

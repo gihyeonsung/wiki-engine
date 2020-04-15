@@ -15,7 +15,6 @@ green     #859900  operators, other keywords
 
 .highlight { 
     font-family: 'Courier New', Courier, monospace;
-    background-color: #fdf6e3;
     color: #586e75;
 }
 .highlight .lineno { color: #93a1a1 } /* Line Numbers */
