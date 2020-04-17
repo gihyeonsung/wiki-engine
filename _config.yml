@@ -28,4 +28,4 @@ defaults:
 collections:
   notes:
     output: true
-    permalink: /:collection/:slug
+    permalink: /:collection/:path
