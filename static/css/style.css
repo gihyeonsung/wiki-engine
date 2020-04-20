@@ -18,7 +18,11 @@ h2 {
   font-size: 1.25rem;
   margin: 1rem 0 0 0;
 }
-p {
+h3 {
+  font-size: 1.1rem;
+  margin: 1rem 0 0 0;
+}
+p, ul, ol {
   margin: 0 0 1rem 0;
   width: 100%;
   word-wrap: break-word;
