@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - release
+      - dev
 jobs:
   build-and-deploy:
     runs-on: ubuntu-18.04
