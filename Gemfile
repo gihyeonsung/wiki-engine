@@ -1,12 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.0.0"
-gem "therubyracer"
-group :jekyll_plugins do
-  gem "jekyll-katex"
-end
+gem "jekyll", "4.0.1"
 
-install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
-  gem "tzinfo", "~> 1.2"
-  gem "tzinfo-data"
+group :jekyll_plugins do
+  gem "jekyll-katex", "1.0.0"
 end
