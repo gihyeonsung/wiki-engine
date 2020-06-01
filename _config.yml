@@ -1,31 +1,24 @@
 title: 노트
-description: >-
-  개인적으로 공부하고 찾은 자료를 정리합니다.
-
-url: "https://hyeon.io"
-
+description: 공부하고 찾은 자료를 정리합니다.
 timezome: Asia/Seoul
+url: https://hyeon.io
 
 static: /static
 media: /media
-
-plugins:
-  - jekyll-katex
-
-katex:
-  rendering_options:
-    throw_error: true
-    error_color: "#ff0000"
-
 defaults:
-  -
-    scope:
-      path: "_notes"
+  - scope:
+      path: _notes
     values:
-      layout: "note"
-      category: "index"
-
+      layout: note
+      category: index
 collections:
   notes:
     output: true
     permalink: /:collection/:path
+
+plugins:
+  - jekyll-katex
+katex:
+  rendering_options:
+    throw_error: true
+    error_color: "#ff0000"
