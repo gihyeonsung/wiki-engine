@@ -11,7 +11,7 @@ permalink: "/tag"
   {% if note.tags contains tag %}
   <li>
     <a href="{{ note.url }}">{{ note.title }}</a>
-    <p class=metadata">{{ note.date | date: "%Y.%m.%d" }}</p>
+    <p class="metadata">{{ note.date | date: "%Y.%m.%d" }}</p>
   </li>
   {% endif %}
   {% endfor %}
