@@ -4,13 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    {% if page.title %}
-    {{ page.title }}
-    {% else %}
-    {{ site.title }}
-    {% endif %}
-  </title>
+  <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css" type="text/css">
   <link rel='stylesheet' href='{{ site.static }}/css/style.css' type='text/css'>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
@@ -18,10 +12,18 @@
 </head>
 
 <body>
+  <header>
+    <p class="metadata">
+      {{ site.title }} | <a href="/">index</a> | <a href="/tag">tag</a>
+    </p>
+  </header>
+
   {{ content }}
 
   <footer>
-    <p class="metadata">Gihyeon Sung &lt;gi@hyeon.io&gt;</p>
+    <address class="metadata">
+      Gihyeon Sung &lt;<a href="mailto:gi@hyeon.io">gi@hyeon.io</a>&gt;
+    </address>
   </footer>
 </body>
 
