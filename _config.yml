@@ -5,6 +5,9 @@ url: https://hyeon.io
 
 static: /static
 media: /media
+exclude:
+  - LICENSE
+
 defaults:
   - scope:
       path: _notes
