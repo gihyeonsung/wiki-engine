@@ -1,10 +1,10 @@
 ---
 layout: default
-permalink: "tag"
 ---
 <h1>태그</h1>
 {% assign tags = site.notes | map: 'tags' | uniq %}
 {% for tag in tags %}
+
 <h2 id="{{ tag }}">#{{ tag }}</h2>
 <ul>
   {% for note in site.notes %}
