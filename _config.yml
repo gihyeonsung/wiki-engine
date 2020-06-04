@@ -17,7 +17,7 @@ defaults:
 collections:
   notes:
     output: true
-    permalink: /:collection/:path
+    permalink: /:path
 
 katex:
   rendering_options:

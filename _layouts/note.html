@@ -6,7 +6,22 @@ layout: default
   <p class="metadata">{{ page.updated | default: page.date | date: "%Y.%m.%d" }}</p>
   <p class="metadata">
     {% for tag in page.tags %}<a href="/tag#{{ tag }}">#{{ tag }}</a>, {% endfor %}
-    <a href="/notes/{{ page.category }}">/{{ page.category }}</a>
+    <a href="/{{ page.category }}">{{ page.category }}</a>
   </p>
+
   {{ content }}
+
+  {% assign subnotes = site.notes | where: "category", page.title %}
+  {% if subnotes.size > 0 %}
+  <h2>하위 노트</h2>
+  <ul>
+    {% for note in subnotes %}
+    <li>
+      {{ note.updated | default: note.date | date: "%Y.%m.%d" }}
+      -
+      <a href="{{ note.url }}">{{ note.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 </article>
