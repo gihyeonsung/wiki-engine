@@ -10,9 +10,9 @@ layout: base
   {% for note in site.notes %}
   {% if note.tags contains tag %}
   <li>
-    <a href="{{ note.url }}">{{ note.title }}</a>
+    {{ note.updated | default: note.date | date: "%Y.%m.%d" }}
     -
-    {{ note.date | date: "%Y.%m.%d" }}
+    <a href="{{ note.url }}">{{ note.title }}</a>
   </li>
   {% endif %}
   {% endfor %}
