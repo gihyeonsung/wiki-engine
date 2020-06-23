@@ -1,13 +1,10 @@
 body {
+  color: #222222;
   font-family: sans-serif;
-  line-height: 1.5em;
-  margin: 1rem;
-}
-@media screen and (min-width: 800px) {
-  body {
-    margin: 1rem 0 0 10rem;
-    max-width: 35rem;
-  }
+  line-height: 1.6em;
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 1rem;
 }
 
 .metadata {
