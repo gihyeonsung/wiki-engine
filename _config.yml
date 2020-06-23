@@ -27,8 +27,3 @@ algolia:
   application_id     : OLMCPSMD9N
   index_name         : notes
   search_only_api_key: 040c121385e2b9a86935cdb74ef87d55
-
-katex:
-  rendering_options:
-    throw_error: true
-    error_color: "#ff0000"
