@@ -7,7 +7,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-18.04
     steps  :
-      - name: Get note repository
+      - name: Get wiki repository
         uses: actions/checkout@v2
 
       - name: Setup Ruby for Jekyll
@@ -22,7 +22,7 @@ jobs:
           key         : ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: ${{ runner.os }}-gems-
 
-      - name: Build notes
+      - name: Build wiki
         run : |
           gem install bundler
           bundle config path vendor/bundle

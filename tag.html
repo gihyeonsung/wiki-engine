@@ -2,17 +2,17 @@
 layout: base
 ---
 <h1>태그</h1>
-{% assign tags = site.notes | map: 'tags' | uniq %}
+{% assign tags = site.pages | map: 'tags' | uniq %}
 {% for tag in tags %}
 
 <h2 id="{{ tag }}">#{{ tag }}</h2>
 <ul>
-  {% for note in site.notes %}
-  {% if note.tags contains tag %}
+  {% for page in site.pages %}
+  {% if page.tags contains tag %}
   <li>
-    {{ note.updated | default: note.date | date: "%Y.%m.%d" }}
+    {{ page.updated | default: page.date | date: "%Y.%m.%d" }}
     -
-    <a href="{{ note.url }}">{{ note.title }}</a>
+    <a href="{{ page.url }}">{{ page.title }}</a>
   </li>
   {% endif %}
   {% endfor %}
