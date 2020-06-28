@@ -22,8 +22,3 @@ collections:
   pages:
     output   : true
     permalink: /:path
-
-algolia:
-  application_id     : OLMCPSMD9N
-  index_name         : pages
-  search_only_api_key: 040c121385e2b9a86935cdb74ef87d55
