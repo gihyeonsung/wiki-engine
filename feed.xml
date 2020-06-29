@@ -5,12 +5,12 @@
   <channel>
     <title>{{ site.title | xml_escape }}</title>
     <link>{{ site.url }}</link>
-    <description>{{ site.description | xml_escape }}</description>{% for page in site.pages %}
+    <description>{{ site.description | xml_escape }}</description>{% for doc in site.docs %}
     <item>
-      <title>{{ page.title | xml_escape }}</title>
-      <link>{{ site.url }}{{ page.url }}</link>
-      <description>{{ page.content | xml_escape }}</description>
-      <pubDate>{{ page.date | date_to_rfc822 }}</pubDate>
+      <title>{{ doc.title | xml_escape }}</title>
+      <link>{{ site.url }}{{ doc.url }}</link>
+      <description>{{ doc.content | xml_escape }}</description>
+      <pubDate>{{ doc.date | date_to_rfc822 }}</pubDate>
     </item>{% endfor %}
   </channel>
 </rss>

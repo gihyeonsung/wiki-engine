@@ -1,0 +1,30 @@
+---
+layout: base
+---
+<article>
+  <h1>{{ page.title }}</h1>
+  <p class="metadata">{{ page.updated | default: page.date | date: "%Y.%m.%d" }}</p>
+  <p class="metadata">
+    {% for tag in page.tags %}<a href="/tag#{{ tag }}">#{{ tag }}</a>, {% endfor %}
+    {% unless page.title == "index" %}
+      {% assign category = site.docs | where: "title", page.category | first %}
+      <a href="{{ category.url }}">/{{ category.title }}</a>
+    {% endunless %}
+  </p>
+
+  {{ content }}
+
+  {% assign subdocs = site.docs | where: "category", page.title %}
+  {% if subdocs.size > 0 %}
+  <h2>하위 문서</h2>
+  <ul>
+    {% for subdoc in subdocs %}
+    <li>
+      {{ subdoc.updated | default: subdoc.date | date: "%Y.%m.%d" }}
+      -
+      <a href="{{ subdoc.url }}">{{ subdoc.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</article>

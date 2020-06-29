@@ -13,12 +13,12 @@ timezome: Asia/Seoul
 
 defaults:
   - scope:
-      path: _pages
+      path: _docs
     values:
-      layout  : page
+      layout  : doc
       category: index
 
 collections:
-  pages:
+  docs:
     output   : true
     permalink: /:path
