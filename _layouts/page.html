@@ -6,7 +6,7 @@ layout: base
   <p class="metadata">{{ page.updated | default: page.date | date: "%Y.%m.%d" }}</p>
   <p class="metadata">
     {% for tag in page.tags %}<a href="/tag#{{ tag }}">#{{ tag }}</a>, {% endfor %}
-    <a href="/{{ page.category }}">{{ page.category }}</a>
+    <a href="/{{ page.category | replace: " ", "-" }}">{{ page.category }}</a>
   </p>
 
   {{ content }}
