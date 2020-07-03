@@ -11,7 +11,9 @@
 <body>
   <header>
     <nav class="metadata">
-      <a href="/index">index</a> | <a href="/tag">tag</a>
+      <a href="/{{ "대문" | url_encode }}">대문</a>
+      |
+      <a href="/{{ "태그" | url_encode }}">태그</a>
     </nav>
   </header>
   <main>{{ content }}</main>

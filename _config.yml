@@ -16,7 +16,7 @@ defaults:
       path: _docs
     values:
       layout  : doc
-      category: index
+      category: 대문
 
 collections:
   docs:

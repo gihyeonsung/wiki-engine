@@ -6,7 +6,7 @@ layout: base
   <p class="metadata">{{ page.updated | default: page.date | date: "%Y.%m.%d" }}</p>
   <p class="metadata">
     {% for tag in page.tags %}<a href="/tag#{{ tag }}">#{{ tag }}</a>, {% endfor %}
-    {% unless page.title == "index" %}
+    {% unless page.title == "대문" %}
       {% assign category = site.docs | where: "title", page.category | first %}
       <a href="{{ category.url }}">/{{ category.title }}</a>
     {% endunless %}
