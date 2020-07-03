@@ -9,14 +9,14 @@
 </head>
 
 <body>
-  <header>
-    <nav class="metadata">
+  <header class="metadata">
+    <nav>
       <a href="/{{ "대문" | url_encode }}">대문</a>
       |
       <a href="/{{ "태그" | url_encode }}">태그</a>
     </nav>
   </header>
-  <main>{{ content }}</main>
+  {{ content }}
   <footer>
     <address class="metadata">
       Gihyeon Sung &lt;<a href="mailto:gi@hyeon.io">gi@hyeon.io</a>&gt;

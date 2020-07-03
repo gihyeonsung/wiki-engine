@@ -1,23 +1,13 @@
-h1 {
-  font-size: 1.4em;
-}
-
-h2 {
-  font-size: 1.2em;
-}
-
-h3 {
-  font-size: 1.1em;
-}
-
+h1 { font-size: 2.4em; }
+h2 { font-size: 1.2em; }
+h3 { font-size: 1.1em; }
 h4, h5, h6 {
   font-size: 1em;
 }
 
 body {
-  color: #222222;
-  font-family: sans-serif;
-  line-height: 1.6em;
+  color: #444;
+  line-height: 2em;
   margin: 0 auto;
   max-width: 40rem;
   padding: 1rem;
