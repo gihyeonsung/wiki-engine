@@ -2,29 +2,31 @@
 layout: base
 ---
 <article>
-  <p class="metadata">{{ page.updated | default: page.date | date: "%Y.%m.%d" }}
+  <p class="metadata">
+    {{ page.updated | default: page.date | date: "%Y.%m.%d" }}
+
     {% for tag in page.tags %}
-      <a href="/tag#{{ tag }}">#{{ tag }}</a>,
+      <a href="/{{ "태그" | url_encode }}#{{ tag }}">#{{ tag }}</a>,
     {% endfor %}
-    {% unless page.title == "대문" %}
-      {% assign category = site.docs | where: "title", page.category | first %}
-      <a href="{{ category.url }}">/{{ category.title }}</a>
-    {% endunless %}
+
+    {% assign category = site.docs | find: "title", page.category %}
+    <a href="{{ category.url }}">/{{ category.title }}</a>
   </p>
 
   <h1>{{ page.title }}</h1>
   {{ content }}
+
   {% assign subdocs = site.docs | where: "category", page.title %}
   {% if subdocs.size > 0 %}
-  <h2>하위 문서</h2>
-  <ul>
-    {% for subdoc in subdocs %}
-    <li>
-      {{ subdoc.updated | default: subdoc.date | date: "%Y.%m.%d" }}
-      -
-      <a href="{{ subdoc.url }}">{{ subdoc.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+    <h2>하위 문서</h2>
+    <ul>
+      {% for subdoc in subdocs %}
+        <li>
+          {{ subdoc.updated | default: subdoc.date | date: "%Y.%m.%d" }}
+          -
+          <a href="{{ subdoc.url }}">{{ subdoc.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
   {% endif %}
 </article>

@@ -4,17 +4,15 @@ layout: base
 <h1>태그</h1>
 {% assign tags = site.docs | map: 'tags' | uniq %}
 {% for tag in tags %}
-
-<h2 id="{{ tag }}">#{{ tag }}</h2>
-<ul>
-  {% for doc in site.docs %}
-    {% if doc.tags contains tag %}
-    <li>
-      {{ doc.updated | default: doc.date | date: "%Y.%m.%d" }}
-      -
-      <a href="{{ doc.url }}">{{ doc.title }}</a>
-    </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+  {% assign docs = site.docs | where_exp: "d", "d.tags contains tag" %}
+  <h2 id="{{ tag }}">#{{ tag }}</h2>
+  <ul>
+    {% for doc in docs %}
+      <li>
+        {{ doc.updated | default: doc.date | date: "%Y.%m.%d" }}
+        -
+        <a href="{{ doc.url }}">{{ doc.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 {% endfor %}
