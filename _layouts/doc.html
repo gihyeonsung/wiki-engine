@@ -10,7 +10,9 @@ layout: base
     {% endfor %}
 
     {% assign category = site.docs | find: "title", page.category %}
-    <a href="{{ category.url }}">/{{ category.title }}</a>
+    {% unless category.title == "대문" %}
+      <a href="{{ category.url }}">/{{ category.title }}</a>
+    {% endunless %}
   </p>
 
   <h1>{{ page.title }}</h1>
@@ -21,6 +23,9 @@ layout: base
     <h2>하위 문서</h2>
     <ul>
       {% for subdoc in subdocs %}
+        {% if subdoc.title == "대문" %}
+          {% continue %}
+        {% endif %}
         <li>
           {{ subdoc.updated | default: subdoc.date | date: "%Y.%m.%d" }}
           -
