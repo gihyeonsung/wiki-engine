@@ -10,7 +10,7 @@ layout: base
     {% endfor %}
 
     {% assign category = site.docs | find: "title", page.category %}
-    {% unless category.title == "대문" %}
+    {% unless page.title == "대문" %}
       <a href="{{ category.url }}">/{{ category.title }}</a>
     {% endunless %}
   </p>
