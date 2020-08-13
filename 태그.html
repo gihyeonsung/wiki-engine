@@ -9,7 +9,7 @@ layout: base
   <ul>
     {% for doc in docs %}
       <li>
-        {{ doc.updated | default: doc.date | date: "%Y.%m.%d" }}
+        {{ doc.updated | default: doc.date | date: "%Y-%m-%d" }}
         -
         <a href="{{ doc.url }}">{{ doc.title }}</a>
       </li>

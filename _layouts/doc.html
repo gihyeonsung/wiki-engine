@@ -3,7 +3,7 @@ layout: base
 ---
 <article>
   <p class="metadata">
-    {{ page.updated | default: page.date | date: "%Y.%m.%d" }}
+    {{ page.updated | default: page.date | date: "%Y-%m-%d" }}
 
     {% for tag in page.tags %}
       <a href="/{{ "태그" | url_encode }}#{{ tag }}">#{{ tag }}</a>,
@@ -27,7 +27,7 @@ layout: base
           {% continue %}
         {% endif %}
         <li>
-          {{ subdoc.updated | default: subdoc.date | date: "%Y.%m.%d" }}
+          {{ subdoc.updated | default: subdoc.date | date: "%Y-%m-%d" }}
           -
           <a href="{{ subdoc.url }}">{{ subdoc.title }}</a>
         </li>
