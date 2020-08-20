@@ -1,37 +1,50 @@
----
-layout: base
----
-<article>
-  <p class="metadata">
-    {{ page.updated | default: page.date | date: "%Y-%m-%d" }}
+<!DOCTYPE html>
+<html lang="ko">
 
-    {% for tag in page.tags %}
-      <a href="/{{ "태그" | url_encode }}#{{ tag }}">#{{ tag }}</a>,
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel='stylesheet' href='{{ site.static }}/css/style.css' type='text/css'>
+</head>
+
+<body>
+  <header>
+    <h1>{{ page.title }}</h1>
+    {% assign c = page %}
+    {% for x in (1..10) %}
+      {% if c.title == "대문" %}
+        {% break %}
+      {% endif %}
+      {% assign c = site.docs | find: "title", c.category %}
+
+      {% capture path %}
+      / <a href="{{ c.url }}">{{ c.title }}</a> {{ path }}
+      {% endcapture %}
     {% endfor %}
+    <p class="metadata">{{ path }}</p>
+    <p class="metadata">{{ page.updated | default: page.date | date: "%Y-%m-%d" }}, Gihyeon Sung &lt;<a
+        href="mailto:gihyeon@gihyeon.xyz">gihyeon@gihyeon.xyz</a>&gt;</p>
+  </header>
 
-    {% assign category = site.docs | find: "title", page.category %}
-    {% unless page.title == "대문" %}
-      <a href="{{ category.url }}">/{{ category.title }}</a>
-    {% endunless %}
-  </p>
-
-  <h1>{{ page.title }}</h1>
   {{ content }}
 
-  {% assign subdocs = site.docs | where: "category", page.title %}
-  {% if subdocs.size > 0 %}
+  <footer>
+    {% assign subdocs = site.docs | where: "category", page.title %}
+    {% if subdocs.size > 0 %}
     <h2>하위 문서</h2>
     <ul>
       {% for subdoc in subdocs %}
-        {% if subdoc.title == "대문" %}
-          {% continue %}
-        {% endif %}
-        <li>
-          {{ subdoc.updated | default: subdoc.date | date: "%Y-%m-%d" }}
-          -
-          <a href="{{ subdoc.url }}">{{ subdoc.title }}</a>
-        </li>
+      {% if subdoc.title == "대문" %}
+      {% continue %}
+      {% endif %}
+      <li>
+        {{ subdoc.updated | default: subdoc.date | date: "%Y-%m-%d" }} <a href="{{ subdoc.url }}">{{ subdoc.title }}</a>
+      </li>
       {% endfor %}
     </ul>
-  {% endif %}
-</article>
+    {% endif %}
+  </footer>
+</body>
+
+</html>
