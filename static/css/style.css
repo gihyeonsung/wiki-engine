@@ -1,27 +1,22 @@
-h1 { font-size: 2.4em; }
-h2 { font-size: 1.2em; }
-h3 { font-size: 1.1em; }
-h4, h5, h6 {
-  font-size: 1em;
-}
-
 body {
   color: #444;
-  line-height: 2em;
   margin: 0 auto;
   max-width: 40rem;
   padding: 1rem;
 }
 
-article > p > img {
-  left: 50%;
-  max-height: 20rem;
-  position: relative;
-  transform: translateX(-50%);
-  width: auto;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .metadata {
-  font-size: 0.75em;
   margin: 0;
 }
