@@ -1,0 +1,46 @@
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-18.04
+    steps  :
+      - name: Get wiki engine repository
+        uses: actions/checkout@v2
+
+      - name: Get contents of wiki
+        uses: actions/checkout@v2
+        with:
+          repository: gihyeonsung/gihyeon.xyz
+          path: ./_docs
+
+      - name: Setup Ruby for Jekyll
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7.1'
+
+      - name: Setup cache for Bundle plugins
+        uses: actions/cache@v1
+        with:
+          path        : vendor/bundle
+          key         : ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-gems-
+
+      - name: Build
+        run : |
+          gem install bundler
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+          bundle exec jekyll build
+
+      - name: Deploy to GitHub pages
+        uses: crazy-max/ghaction-github-pages@v2.1.2
+        with:
+          repo     : gihyeonsung/gihyeonsung.github.io
+          build_dir: ./_site
+          jekyll   : false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT:       ${{ secrets.GH_PAT }}
